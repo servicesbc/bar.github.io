@@ -139,7 +139,7 @@ function updateTime() {
 }
 
 document.getElementById('search-google').addEventListener('click', function() {
-    const searchQuery = document.getElementById('google-search-query').value;
+    const searchQuery = document.getElementById('googe-search-query').value;
     if (searchQuery.trim() !== '') {
         const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
         window.open(googleSearchUrl, '_blank');.
