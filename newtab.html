@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bartender Tab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="icon-bartendertab.png" alt="Bartender Tab Icon" style="display: block; margin: 0 auto; width: 100px; height: 100px;">
+<div class="mini-search">
+            <input type="text" id="google-search-query" placeholder="Search Google">
+            <button id="search-google">Search</button>
+        </div>
+        <input type="text" id="search-input" class="form-control mb-4" placeholder="Search cocktail" oninput="searchCocktails()">
+        <div id="alphabet-buttons">
+             <button onclick="filterByLetter('A')" class="btn btn-dark btn-sm">A</button>
+<button onclick="filterByLetter('B')" class="btn btn-dark btn-sm">B</button>
+<button onclick="filterByLetter('C')" class="btn btn-dark btn-sm">C</button>
+<button onclick="filterByLetter('D')" class="btn btn-dark btn-sm">D</button>
+<button onclick="filterByLetter('E')" class="btn btn-dark btn-sm">E</button>
+<button onclick="filterByLetter('F')" class="btn btn-dark btn-sm">F</button>
+<button onclick="filterByLetter('G')" class="btn btn-dark btn-sm">G</button>
+<button onclick="filterByLetter('H')" class="btn btn-dark btn-sm">H</button>
+<button onclick="filterByLetter('I')" class="btn btn-dark btn-sm">I</button>
+<button onclick="filterByLetter('J')" class="btn btn-dark btn-sm">J</button>
+<button onclick="filterByLetter('K')" class="btn btn-dark btn-sm">K</button>
+<button onclick="filterByLetter('L')" class="btn btn-dark btn-sm">L</button>
+<button onclick="filterByLetter('M')" class="btn btn-dark btn-sm">M</button>
+<button onclick="filterByLetter('N')" class="btn btn-dark btn-sm">N</button>
+<button onclick="filterByLetter('O')" class="btn btn-dark btn-sm">O</button>
+<button onclick="filterByLetter('P')" class="btn btn-dark btn-sm">P</button>
+<button onclick="filterByLetter('Q')" class="btn btn-dark btn-sm">Q</button>
+<button onclick="filterByLetter('R')" class="btn btn-dark btn-sm">R</button>
+<button onclick="filterByLetter('S')" class="btn btn-dark btn-sm">S</button>
+<button onclick="filterByLetter('T')" class="btn btn-dark btn-sm">T</button>
+<button onclick="filterByLetter('U')" class="btn btn-dark btn-sm">U</button>
+<button onclick="filterByLetter('V')" class="btn btn-dark btn-sm">V</button>
+<button onclick="filterByLetter('W')" class="btn btn-dark btn-sm">W</button>
+<button onclick="filterByLetter('X')" class="btn btn-dark btn-sm">X</button>
+<button onclick="filterByLetter('Y')" class="btn btn-dark btn-sm">Y</button>
+<button onclick="filterByLetter('Z')" class="btn btn-dark btn-sm">Z</button>
+        </div>
+        <ul id="cocktail-list" class="row"></ul>
+    </div>
+
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="recipe-content"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 BCTab.com - Bartender Tab</p>
+    </footer>
+
+    <div class="current-time" id="current-time"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
