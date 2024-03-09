@@ -1,7 +1,5 @@
-// URL base de la API
 const API_URL = 'https://www.thecocktaildb.com/api/json/v1/1/';
 
-// Obtener la lista de cócteles desde la API
 async function fetchAllCocktails() {
     try {
         const response = await fetch(API_URL + 'search.php?f=a');
@@ -12,13 +10,11 @@ async function fetchAllCocktails() {
     }
 }
 
-// Mostrar todos los cócteles al principio
 async function displayAllCocktails() {
     const cocktails = await fetchAllCocktails();
     displayCocktails(cocktails);
 }
 
-// Función para mostrar los cócteles en el área de contenido
 function displayCocktails(cocktails) {
     const cocktailList = document.getElementById('cocktail-list');
     cocktailList.innerHTML = '';
@@ -35,7 +31,6 @@ function displayCocktails(cocktails) {
     });
 }
 
-// Función para buscar cócteles por nombre
 async function searchCocktails() {
     const searchInput = document.getElementById('search-input').value;
     if (searchInput.trim() === '') {
@@ -56,7 +51,6 @@ async function searchCocktails() {
     }
 }
 
-// Función para filtrar los cócteles por letra
 async function filterByLetter(letter) {
     try {
         const response = await fetch(API_URL + 'search.php?f=' + letter);
@@ -78,7 +72,6 @@ async function filterByLetter(letter) {
     }
 }
 
-// Función para abrir el modal con la receta del cóctel
 async function openModal(cocktailId) {
     const modal = document.getElementById('recipe-modal');
     const modalContent = document.getElementById('recipe-content');
@@ -108,7 +101,6 @@ async function openModal(cocktailId) {
     }
 }
 
-// Obtener la lista de ingredientes de un cóctel
 function getIngredients(cocktail) {
     const ingredients = [];
     for (let i = 1; i <= 15; i++) {
@@ -121,25 +113,21 @@ function getIngredients(cocktail) {
     return ingredients;
 }
 
-// Función para formatear las instrucciones en párrafos numerados
 function formatInstructions(instructions) {
     const steps = instructions.split('\n').filter(step => step.trim() !== '');
     return steps.map((step, index) => `<li>${step}</li>`).join('');
 }
 
-// Función para cerrar el modal
 function closeModal() {
     const modal = document.getElementById('recipe-modal');
     modal.style.display = 'none';
 }
 
-// Mostrar todos los cócteles al cargar la página
 window.onload = async function() {
     displayAllCocktails();
     updateTime();
 };
 
-// Función para actualizar la hora y los minutos cada segundo
 function updateTime() {
     const currentTimeElement = document.getElementById('current-time');
     setInterval(() => {
@@ -150,7 +138,6 @@ function updateTime() {
     }, 1000);
 }
 
-// Funcionalidad del buscador de Google
 document.getElementById('search-google').addEventListener('click', function() {
     const searchQuery = document.getElementById('google-search-query').value;
     if (searchQuery.trim() !== '') {
