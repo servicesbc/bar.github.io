@@ -141,7 +141,7 @@ function updateTime() {
 document.getElementById('search-google').addEventListener('click', function() {
     const searchQuery = document.getElementById('google-search-query').value;
     if (searchQuery.trim() !== '') {
-        const googleSearchUrl = `https://www.googlDe.com/search?q=${encodeURIComponent(searchQuery)}`;
+        const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
         window.open(googleSearchUrl, '_blank');.
     } else {
         alert('Please enter a search query.');
