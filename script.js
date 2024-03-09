@@ -147,5 +147,3 @@ document.getElementById('search-google').addEventListener('click', function() {
         alert('Please enter a search query.');
     }
 });
-
-
