@@ -24,7 +24,7 @@ function displayCocktails(cocktails) {
         listItem.classList.add('cocktail');
         listItem.innerHTML = `
             <h2>${cocktail.strDrink}</h2>
-            <img src="${cocktail.strDrinkThumb + '/preview'}" alt="${cocktail.strDrink} Image">
+            <img src="${cocktail.strDrinkThumb}/preview" alt="${cocktail.strDrink} Image">
             <button class="view-recipe-btn" onclick="openModal('${cocktail.idDrink}')">View Recipe</button>
         `;
         cocktailList.appendChild(listItem);
@@ -82,7 +82,7 @@ async function openModal(cocktailId) {
             const cocktail = data.drinks[0];
             modalContent.innerHTML = `
                 <h2>${cocktail.strDrink}</h2>
-                <img src="${cocktail.strDrinkThumb + '/preview'}" alt="${cocktail.strDrink} Image">
+                <img src="${cocktail.strDrinkThumb}/preview" alt="${cocktail.strDrink} Image">
                 <p><strong>Ingredients:</strong></p>
                 <ul>
                     ${getIngredients(cocktail).join('')}
@@ -142,9 +142,10 @@ document.getElementById('search-google').addEventListener('click', function() {
     const searchQuery = document.getElementById('google-search-query').value;
     if (searchQuery.trim() !== '') {
         const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
-        window.open(googleSearchUrl, '_blank');.
+        window.open(googleSearchUrl, '_blank');
     } else {
         alert('Please enter a search query.');
     }
 });
+
 
