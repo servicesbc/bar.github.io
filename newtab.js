@@ -24,7 +24,7 @@ function displayCocktails(cocktails) {
         listItem.classList.add('cocktail');
         listItem.innerHTML = `
             <h2>${cocktail.strDrink}</h2>
-            <img src="${cocktail.strDrinkThumb}/preview" alt="${cocktail.strDrink} Image">
+            <img src="${cocktail.strDrinkThumb + '/preview'}" alt="${cocktail.strDrink} Image">
             <button class="view-recipe-btn" onclick="openModal('${cocktail.idDrink}')">View Recipe</button>
         `;
         cocktailList.appendChild(listItem);
@@ -51,6 +51,7 @@ async function searchCocktails() {
     }
 }
 
+// Función para filtrar los cócteles por letra
 async function filterByLetter(letter) {
     try {
         const response = await fetch(API_URL + 'search.php?f=' + letter);
@@ -80,9 +81,12 @@ async function openModal(cocktailId) {
         const data = await response.json();
         if (data.drinks && data.drinks.length > 0) {
             const cocktail = data.drinks[0];
+            // Verificar si ya hay información en el modal
+            const hasContent = modalContent.innerHTML.trim() !== '';
             modalContent.innerHTML = `
                 <h2>${cocktail.strDrink}</h2>
-                <img src="${cocktail.strDrinkThumb}/preview" alt="${cocktail.strDrink} Image">
+                <img src="${cocktail.strDrinkThumb + '/preview'}" alt="${cocktail.strDrink} Image">
+                ${hasContent ? `<p><strong>Category:</strong> ${cocktail.strCategory}</p>` : ''}
                 <p><strong>Ingredients:</strong></p>
                 <ul>
                     ${getIngredients(cocktail).join('')}
