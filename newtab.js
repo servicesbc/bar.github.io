@@ -51,7 +51,6 @@ async function searchCocktails() {
     }
 }
 
-// Función para filtrar los cócteles por letra
 async function filterByLetter(letter) {
     try {
         const response = await fetch(API_URL + 'search.php?f=' + letter);
@@ -62,7 +61,7 @@ async function filterByLetter(letter) {
         } else {
             console.error('No drinks found for letter:', letter);
             const cocktailList = document.getElementById('cocktail-list');
-            cocktailList.innerHTML = ''; // Limpiar la lista si no hay cócteles
+            cocktailList.innerHTML = '';
             const notFoundItem = document.createElement('li');
             notFoundItem.classList.add('not-found');
             notFoundItem.textContent = 'Not Found';
@@ -81,7 +80,6 @@ async function openModal(cocktailId) {
         const data = await response.json();
         if (data.drinks && data.drinks.length > 0) {
             const cocktail = data.drinks[0];
-            // Verificar si ya hay información en el modal
             const hasContent = modalContent.innerHTML.trim() !== '';
             modalContent.innerHTML = `
                 <h2>${cocktail.strDrink}</h2>
