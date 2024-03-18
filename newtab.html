@@ -196,11 +196,15 @@ footer {
 <body>
     <div class="container">
         <img src="icon-bartendertab.png" alt="Bartender Tab Icon" style="display: block; margin: 0 auto; width: 100px; height: 100px;">
-<div class="mini-search">
-            <input type="text" id="google-search-query" placeholder="Search the web">
-            <button id="search-google">Search</button>
-        </div>
-        <input type="text" id="search-input" class="form-control mb-4" placeholder="Search cocktail" oninput="searchCocktails()">
+ <div class="mini-search">
+        <input type="text" id="google-search-query" placeholder="Search the web...">
+        <button id="search-google">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+        </button>
+    </div>
+        <input type="text" id="search-input" class="form-control mb-4" placeholder="Start typing to filter..." oninput="searchCocktails()">
         <div id="alphabet-buttons">
              <button onclick="filterByLetter('A')" class="btn btn-dark btn-sm">A</button>
 <button onclick="filterByLetter('B')" class="btn btn-dark btn-sm">B</button>
