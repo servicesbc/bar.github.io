@@ -1,4 +1,4 @@
-const API_URL = 'https://www.thecocktaildb.com/api/json/v1/1/';
+const API_URL = process.env.CUSTOM_API_URL;
 
 async function fetchAllCocktails() {
     try {
