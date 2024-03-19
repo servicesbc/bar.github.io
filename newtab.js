@@ -1,4 +1,4 @@
-const API_URL = process.env.CUSTOM_API_URL;
+const CUSTOM_API_URL = process.env.CUSTOM_API_URL;
 
 async function fetchAllCocktails() {
     try {
